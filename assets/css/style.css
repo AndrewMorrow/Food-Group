@@ -1,4 +1,22 @@
-.theFoofGroup{
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+footer {
+    background-color: teal;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;;
+    color: white;
+    text-align: center;
+}
+
+
+
+.theFoodGroup{
     font-size: 2rem !important;
 }
 
