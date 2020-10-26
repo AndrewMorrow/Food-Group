@@ -14,7 +14,10 @@ footer {
     text-align: center;
 }
 
-
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
 
 .theFoodGroup{
     font-size: 2rem !important;
@@ -24,10 +27,12 @@ footer {
     margin-top: 3rem;
 }
 
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-} */
+.container {
+ width: auto;
+ margin: 0 auto;   
+}
+
+.card-image{
+width: auto;
+}
 
