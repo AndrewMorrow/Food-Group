@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+footer {
+    background-color: teal;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;;
+    color: white;
+    text-align: center;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.theFoodGroup{
+    font-size: 2rem !important;
+}
+
+.marginTop{
+    margin-top: 3rem;
+}
+
+.container {
+ width: auto;
+ margin: 0 auto;   
+}
+
+.card-image{
+width: auto;
+}
+

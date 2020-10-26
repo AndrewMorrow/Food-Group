@@ -5,6 +5,12 @@ const SEARCHBUTTON = $(".searchBtn");
 const CARDSHOW = $(".cardShow");
 const RECIPECARDDIV = $(".recipeCard");
 
+
+// Nav
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.modal').modal();
+    M.updateTextFields();
 SEARCHBUTTON.on("click", basicCall);
 
 // runs on search click
@@ -158,3 +164,4 @@ function getHealthFacts(hit) {
     // returns an array of objects with healthFacts
     return healthFacts;
 }
+});
