@@ -30,16 +30,16 @@
         >
         <ul class="right hide-on-med-and-down">
           <li><a href="#" class="home">Home</a></li>
-          <li><a href="#" class="favorites">Favorites</a></li>
-          <li><a href="#" class="history">History</a></li>
+          <li><a class="waves-effect waves-light modal-trigger" href="#modal3">Favorites</a></li>
+          <li><a class="waves-effect waves-light modal-trigger" href="#modal4">History</a></li>
         </ul>
       </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
       <li><a href="#" class="home">Home</a></li>
-      <li><a href="#" class="favorites">Favorites</a></li>
-      <li><a href="#" class="history">History</a></li>
+      <li><a href="#modal3" class="favorites modal-trigger">Favorites</a></li>
+      <li><a href="#modal4" class="history modal-trigger">History</a></li>
     </ul>
 
     <!-- End of nav -->
@@ -71,20 +71,21 @@
             <nav>
               <div class="nav-wrapper teal">
                 
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">plus</i></a>
+                <a href="#" data-target="mobile-demo2" class="sidenav-trigger"><i class="material-icons text-darken-5">&#43</i></a>
+                
                 <ul class="right hide-on-med-and-down">
                   <li><a class="waves-effect waves-light btn-small modal-trigger" href="#modal1">Ingredients</a></li>
                   <li><a class="waves-effect waves-light btn-small modal-trigger" href="#modal2">Grocery Stores</a></li>
-                  <li><a class="waves-effect waves-light btn-small modal-trigger" href="#modal3"><i class="material-icons right">favorite</i>Fav</a></li>
+                  <li><a class="waves-effect waves-light btn-small"><i class="material-icons right">favorite</i>Add</a></li>
                   
                 </ul>
               </div>
             </nav>
           
-            <ul class="sidenav" id="mobile-demo">
-              <li><a href="#modal1">Ingredients</a></li>
-              <li><a href="#modal2">Grocery Stores</a></li>
-              <li><a href="#modal3">Favorite</a></li>
+            <ul class="sidenav" id="mobile-demo2">
+              <li><a href="#modal1" class="modal-trigger">Ingredients</a></li>
+              <li><a href="#modal2" class="modal-trigger">Grocery Stores</a></li>
+              <li><a href="#">Add Fav</a></li>
               
             </ul>
 
@@ -101,6 +102,7 @@
     
 
     <!-- Modal Structure -->
+    <!-- Ingredients -->
     <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Ingredients</h4>
@@ -110,7 +112,7 @@
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
       </div>
     </div>
-
+<!-- Maps -->
     <div id="modal2" class="modal">
       <div class="modal-content">
         <h4>Grocery Stores</h4>
@@ -120,12 +122,23 @@
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
       </div>
     </div>
-
+<!-- Fav -->
     <div id="modal3" class="modal">
       <div class="modal-content">
         <h4>Favorites</h4>
         <p>A bunch of text</p>
-        <a class="waves-effect waves-light btn-small"><i class="material-icons right">favorite</i>Add</a>
+        
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+      </div>
+    </div>
+<!-- History -->
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>History</h4>
+        <p>A bunch of text</p>
+       
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>

@@ -9,7 +9,7 @@
     M.updateTextFields();
   });
 
-
+// modals
   $(document).ready(function(){
     $('.modal').modal();
   });
