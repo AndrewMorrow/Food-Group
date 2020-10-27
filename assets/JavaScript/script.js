@@ -55,8 +55,10 @@ function basicCall() {
             // console.log(recipeFat);
 
             // creates elements to append for testing
-            let showRecipeTitle = $(`<h2> ${recipeTitle} </h2>`);
-            let showRecipeImage = $(`<img src="${recipeImage}"</img>`);
+            let showRecipeTitle = $(`<h4> ${recipeTitle} </h4>`);
+            let cardLard = $("<div>").addClass("card large");
+            let cardImage = $("<div>").addClass("card-image");
+            let showRecipeImage = $(`<img src="${recipeImage}"</img>`).attr("alt", `picture of the recipe ${recipeTitle}`);
             let showRecipeUrl = $(
                 `<a href="${recipeUrl}"> Original Recipe </a>`
             );
@@ -72,6 +74,11 @@ function basicCall() {
             let showRecipeCholesterol = $(
                 `<p> Total Cholesterol: ${recipeCholesterol}</p>`
             );
+
+
+
+            
+
 
             // appends all the elements created for testing
             CARDSHOW.append(showRecipeTitle);
