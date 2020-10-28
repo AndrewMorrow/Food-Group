@@ -30,15 +30,23 @@
             ><i class="material-icons">menu</i></a
           >
           <ul class="right hide-on-med-and-down">
-            <li><a href="#" class="home">Home</a></li>
+            <li>  <a
+              class="favorites waves-effect waves-light modal-trigger"
+              href="#modaHistory"
+              >History</a
+            ></li>
             <li>
-              <a class="waves-effect waves-light modal-trigger" href="#modal3"
+              <a
+                class="favorites waves-effect waves-light modal-trigger"
+                href="#modaFav"
                 >Favorites</a
               >
             </li>
             <li>
-              <a class="waves-effect waves-light modal-trigger" href="#modal4"
-                >History</a
+              <a
+                class="history waves-effect waves-light modal-trigger"
+                href="#modalMap"
+                >Nearby Stores</a
               >
             </li>
           </ul>
@@ -46,34 +54,39 @@
       </nav>
     </div>
     <ul class="sidenav" id="mobile-demo">
-      <li><h4 class="teal white-text center-align">The Food Group</h4></li>
-      <li><a href="#" class="home">Home</a></li>
-      <li><a href="#modal3" class="favorites modal-trigger">Favorites</a></li>
-      <li><a href="#modal4" class="history modal-trigger">History</a></li>
+      <li>
+        <h4 class="teal white-text center-align">The Food Group</h4>
+      </li>
+      <li><a href="#modaHistory" class="history modal-trigger">History</a></li>
+      <li>
+        <a href="#modaFav" class="favorites modal-trigger">Favorites</a>
+      </li>
+      <li><a href="#modalMap" class="history modal-trigger">Nearby Stores</a></li>
     </ul>
 
     <!-- End of nav -->
 
     <div class="container">
       <div class="row">
-        <div class="cardShow"></div>
-
         <div class="input-field col s9 offset-2 m7 marginTop offset-3">
           <input id="userRecipeSearch" type="text" class="validate" />
           <label class="active" for="userRecipeSearch">Search Recipe</label>
-          <span>
-            <a class="waves-effect waves-light btn searchBtn">Search</a>
+          <span class="searchBtn">
+            <a class="searchBtn waves-effect waves-light btn">Search</a>
+            <a class="history waves-effect waves-light btn modal-trigger" href="#modaHistory"
+              >History</a
+            >
           </span>
         </div>
       </div>
       <div class="row">
-        <div class="">
+        <div class="cardShow">
           <h4 class="light">What they type</h4>
           <div class="card large">
             <div class="card-image">
               <img
                 class="responsive-img"
-                src="https://www.edamam.com/web-img/5a5/5a5220b7a65c911a1480502ed0532b5c.jpg"
+                src="https://via.placeholder.com/300x300"
                 alt="Example of a recipe picture"
               />
               <span class="card-title">Recipe</span>
@@ -92,20 +105,20 @@
                 <ul class="right hide-on-med-and-down">
                   <li>
                     <a
-                      class="waves-effect waves-light btn-small modal-trigger"
+                      class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
                       href="#modal1"
                       >Ingredients</a
                     >
                   </li>
                   <li>
                     <a
-                      class="waves-effect waves-light btn-small modal-trigger"
-                      href="#modal2"
-                      >Grocery Stores</a
+                      class="groceryBtn waves-effect waves-light btn-small"
+                      href="#"
+                      >Recipe</a
                     >
                   </li>
                   <li>
-                    <a class="waves-effect waves-light btn-small"
+                    <a class="addFavBtn waves-effect waves-light btn-small"
                       ><i class="material-icons right">favorite</i>Add</a
                     >
                   </li>
@@ -114,10 +127,14 @@
             </nav>
 
             <ul class="sidenav" id="mobile-demo2">
-              <li><h4 class="teal white-text center-align">The Recipe</h4></li>
-              <li><a href="#modal1" class="modal-trigger">Ingredients</a></li>
               <li>
-                <a href="#modal2" class="modal-trigger">Grocery Stores</a>
+                <h4 class="teal white-text center-align">The Recipe</h4>
+              </li>
+              <li>
+                <a href="#modal1" class="modal-trigger">Ingredients</a>
+              </li>
+              <li>
+                <a href="#" >Recipe</a>
               </li>
               <li><a href="#">Add Fav</a></li>
             </ul>
@@ -141,7 +158,7 @@
       </div>
     </div>
     <!-- Maps -->
-    <div id="modal2" class="modal">
+    <div id="modalMap" class="modal">
       <div class="modal-content">
         <h4>Grocery Stores</h4>
         <p>A bunch of text</p>
@@ -153,7 +170,7 @@
       </div>
     </div>
     <!-- Fav -->
-    <div id="modal3" class="modal">
+    <div id="modaFav" class="modal">
       <div class="modal-content">
         <h4>Favorites</h4>
         <p>A bunch of text</p>
@@ -165,7 +182,7 @@
       </div>
     </div>
     <!-- History -->
-    <div id="modal4" class="modal">
+    <div id="modaHistory" class="modal">
       <div class="modal-content">
         <h4>History</h4>
         <p>A bunch of text</p>
@@ -177,7 +194,7 @@
       </div>
     </div>
 
-    <footer class="teal-text z-depth-5">
+    <footer class="teal z-depth-5">
       <b>© The Food Group</b>
       API's by Edamam and Google Maps
     </footer>
