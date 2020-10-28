@@ -21,25 +21,26 @@
         <title>Recipe Homepage</title>
     </head>
 
-    <body>
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper teal z-depth-5">
-                    <a href="#!" class="theFoodGroup"> The Food Group</a>
-                    <a
-                        href="#"
-                        data-target="mobile-demo"
-                        class="sidenav-trigger"
-                        ><i class="material-icons">menu</i></a
-                    >
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#" class="homeBtn">Home</a></li>
-                        <li>
-                            <a
-                                class="favorites waves-effect waves-light modal-trigger"
-                                href="#modal3"
-                                >Favorites</a
-                            >
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal z-depth-5">
+          <a href="#!" class="theFoodGroup"> The Food Group</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li>  <a
+              class="favorites waves-effect waves-light modal-trigger"
+              href="#modaHistory"
+              >History</a
+            ></li>
+            <li>
+              <a
+                class="favorites waves-effect waves-light modal-trigger"
+                href="#modaFav"
+                >Favorites</a
+              >
                         </li>
                         <li>
                             <a
@@ -55,171 +56,173 @@
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <h4 class="teal white-text center-align">The Food Group</h4>
+
             </li>
             <li><a href="#" class="homeBtn">Home</a></li>
             <li>
+
+              <a
+                class="history waves-effect waves-light modal-trigger"
+                href="#modalMap"
+                >Nearby Stores</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <h4 class="teal white-text center-align">The Food Group</h4>
+      </li>
+      <li><a href="#modaHistory" class="history modal-trigger">History</a></li>
+      <li>
+        <a href="#modaFav" class="favorites modal-trigger">Favorites</a>
+      </li>
+      <li><a href="#modalMap" class="history modal-trigger">Nearby Stores</a></li>
+    </ul>
                 <a href="#modal3" class="favorites modal-trigger">Favorites</a>
             </li>
             <li><a href="#modal4" class="history modal-trigger">History</a></li>
         </ul>
 
+
         <!-- End of nav -->
 
-        <div class="container">
-            <div class="row">
-                <div class="input-field col s9 offset-2 m7 marginTop offset-3">
-                    <input id="userRecipeSearch" type="text" class="validate" />
-                    <label class="active" for="userRecipeSearch"
-                        >Search Recipe</label
+
+    <div class="container">
+      <div class="row">
+        <div class="input-field col s9 offset-2 m7 marginTop offset-3">
+          <input id="userRecipeSearch" type="text" class="validate" />
+          <label class="active" for="userRecipeSearch">Search Recipe</label>
+          <span class="searchBtn">
+            <a class="searchBtn waves-effect waves-light btn">Search</a>
+            <a class="history waves-effect waves-light btn modal-trigger" href="#modaHistory"
+              >History</a
+            >
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cardShow">
+          <h4 class="light">What they type</h4>
+          <div class="card large">
+            <div class="card-image">
+              <img
+                class="responsive-img"
+                src="https://via.placeholder.com/300x300"
+                alt="Example of a recipe picture"
+              />
+              <span class="card-title">Recipe</span>
+            </div>
+            <div class="card-content">
+              <p>Example Recipe</p>
+
+
+            <!-- Card nav -->
+            <nav>
+              <div class="nav-wrapper teal">
+                <a href="#" data-target="mobile-demo2" class="sidenav-trigger"
+                  ><i class="material-icons text-darken-5">more_horiz</i></a
+                >
+
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <a
+                      class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
+                      href="#modal1"
+                      >Ingredients</a
                     >
-                    <span class="searchBtn">
-                        <a class="searchBtn waves-effect waves-light btn"
-                            >Search</a
-                        >
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cardShow">
-                    <h4 class="light">What they type</h4>
-                    <div class="card large">
-                        <div class="card-image">
-                            <img
-                                class="responsive-img"
-                                src="https://via.placeholder.com/300x300"
-                                alt="Example of a recipe picture"
-                            />
-                            <span class="card-title">Recipe</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Example Recipe</p>
-                        </div>
+                  </li>
+                  <li>
+                    <a
+                      class="groceryBtn waves-effect waves-light btn-small"
+                      href="#"
+                      >Recipe</a
+                    >
+                  </li>
+                  <li>
+                    <a class="addFavBtn waves-effect waves-light btn-small"
+                      ><i class="material-icons right">favorite</i>Add</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
 
-                        <!-- Card nav -->
-                        <nav>
-                            <div class="nav-wrapper teal">
-                                <a
-                                    href="#"
-                                    data-target="mobile-demo2"
-                                    class="sidenav-trigger"
-                                    ><i class="material-icons text-darken-5"
-                                        >more_horiz</i
-                                    ></a
-                                >
+            <ul class="sidenav" id="mobile-demo2">
+              <li>
+                <h4 class="teal white-text center-align">The Recipe</h4>
+              </li>
+              <li>
+                <a href="#modal1" class="modal-trigger">Ingredients</a>
+              </li>
+              <li>
+                <a href="#" >Recipe</a>
+              </li>
+              <li><a href="#">Add Fav</a></li>
+            </ul>
+            <!-- Card nav End -->
+          </div>
+        </div>
+      </div>
+    </div>
 
-                                <ul class="right hide-on-med-and-down">
-                                    <li>
-                                        <a
-                                            class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
-                                            href="#modal1"
-                                            >Ingredients</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="groceryBtn waves-effect waves-light btn-small modal-trigger"
-                                            href="#modal2"
-                                            >Grocery Stores</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="addFavBtn waves-effect waves-light btn-small"
-                                            ><i class="material-icons right"
-                                                >favorite</i
-                                            >Add</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                        <ul class="sidenav" id="mobile-demo2">
-                            <li>
-                                <h4 class="teal white-text center-align">
-                                    The Recipe
-                                </h4>
-                            </li>
-                            <li>
-                                <a href="#modal1" class="modal-trigger"
-                                    >Ingredients</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#modal2" class="modal-trigger"
-                                    >Grocery Stores</a
-                                >
-                            </li>
-                            <li><a href="#">Add Fav</a></li>
-                        </ul>
-                        <!-- Card nav End -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Structure -->
-        <!-- Ingredients -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Ingredients</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
-                    >Done</a
-                >
-            </div>
-        </div>
-        <!-- Maps -->
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-                <h4>Grocery Stores</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
-                    >Done</a
-                >
-            </div>
-        </div>
-        <!-- Fav -->
-        <div id="modal3" class="modal">
-            <div class="modal-content">
-                <h4>Favorites</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
-                    >Done</a
-                >
-            </div>
-        </div>
-        <!-- History -->
-        <div id="modal4" class="modal">
-            <div class="modal-content">
-                <h4>History</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
-                    >Done</a
-                >
-            </div>
-        </div>
+    <!-- Modal Structure -->
+    <!-- Ingredients -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Ingredients</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Done</a
+        >
+      </div>
+    </div>
+    <!-- Maps -->
+    <div id="modalMap" class="modal">
+      <div class="modal-content">
+        <h4>Grocery Stores</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Done</a
+        >
+      </div>
+    </div>
+    <!-- Fav -->
+    <div id="modaFav" class="modal">
+      <div class="modal-content">
+        <h4>Favorites</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Done</a
+        >
+      </div>
+    </div>
+    <!-- History -->
+    <div id="modaHistory" class="modal">
+      <div class="modal-content">
+        <h4>History</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Done</a
+        >
+      </div>
+    </div>
 
         <footer class="teal z-depth-5">
             <b>© The Food Group</b>
             API's by Edamam and Google Maps
         </footer>
+
 
         <!-- jQuery CDN -->
         <script
