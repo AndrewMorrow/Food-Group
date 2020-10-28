@@ -5,11 +5,12 @@ body {
 }
 
 footer {
-   
+    background-color: teal;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;;
+    color: white;
     text-align: center;
 }
 
@@ -28,16 +29,10 @@ footer {
 
 .container {
  width: auto;
- margin: 0 auto; 
-  
+ margin: 0 auto;   
 }
 
 .card-image{
 width: auto;
-
-}
-
-.card.large {
-  height: 100%;
 }
 

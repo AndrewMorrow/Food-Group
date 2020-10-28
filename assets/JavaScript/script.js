@@ -10,6 +10,7 @@ const HISTBTN = $(".history");
 const INGREDIENTSBTN = $(".ingredientsBtn");
 const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
+const FAVMODAL = $(".favModal");
 
 // Nav
 $(document).ready(function () {
@@ -21,7 +22,8 @@ $(document).ready(function () {
     SEARCHBUTTON.on("click", basicCall);
 
     // runs on search click
-    function basicCall() {
+    function basicCall(e) {
+        e.preventDefault();
         let userSearch = SEARCHBAR.val();
         SEARCHBAR.empty();
         CARDSHOW.empty();
