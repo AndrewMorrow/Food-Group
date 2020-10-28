@@ -35,3 +35,6 @@ footer {
 width: auto;
 }
 
+.card.large {
+    height: 100%;
+  }
