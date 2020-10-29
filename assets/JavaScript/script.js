@@ -100,8 +100,16 @@ $(document).ready(function () {
                 var cardContent = $("<div>");
                 cardContent.addClass("card-content");
 
-                var cardRecipe = $("<p>");
-                cardRecipe.text(recipeUrl);
+                var cardRecipe = $(
+                    `<ul class="collection with-header cardFavList">
+                        <h5 class="collection-header"> Nutritional Facts </h5>
+                        <li class="collection-item">Total Fat: ${recipeFat}</li>
+                        <li class="collection-item">Total Carbs: ${recipeCarbs}</li>
+                        <li class="collection-item">Total Protein: ${recipeProtein}</li>
+                        <li class="collection-item">Total Cholestertol: ${recipeCholesterol}</li>
+                    </ul>`
+                );
+                // cardRecipe.text(recipeUrl);
 
                 var navTag = $("<nav>");
 
