@@ -147,7 +147,7 @@ $(document).ready(function () {
                 );
                 aGrocery.attr("target", "_blank");
                 aGrocery.attr("href", recipeUrl);
-                aGrocery.text("Grocery");
+                aGrocery.text("Recipe");
 
 
                 var aFavorites = $("<a>");
