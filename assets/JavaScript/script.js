@@ -27,9 +27,10 @@ $(document).ready(function () {
     searchHistory();
 
     // materialize js fires
-    $(".sidenav").sidenav();
-    $(".modal").modal();
-    M.updateTextFields();
+    // $(".sidenav").sidenav();
+    // $(".modal").modal();
+    // M.updateTextFields();
+    M.AutoInit();
     setFavModal();
 
     SEARCHBUTTON.on("click", basicCall);
