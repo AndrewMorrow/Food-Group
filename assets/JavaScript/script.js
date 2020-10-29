@@ -11,6 +11,7 @@ const INGREDIENTSBTN = $(".ingredientsBtn");
 const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
 const FAVMODAL = $(".favModal");
+var favStorage = [];
 
 // Nav
 $(document).ready(function () {
@@ -29,6 +30,7 @@ $(document).ready(function () {
     $(".sidenav").sidenav();
     $(".modal").modal();
     M.updateTextFields();
+    setFavModal();
 
     SEARCHBUTTON.on("click", basicCall);
 
@@ -49,7 +51,8 @@ $(document).ready(function () {
             // console.log(response);
             let hits = response.hits;
             // targets each recipe received and targets elements we need
-            hits.forEach((hit) => {
+            var i = 0;
+            hits.forEach((hit, i) => {
                 // console.log(hit);
 
                 let recipeTitle = hit.recipe.label;
@@ -79,7 +82,7 @@ $(document).ready(function () {
 
                 var recipeh5 = $("<h5>");
                 recipeh5.addClass("light");
-                recipeh5.addClass(`recipeHeader`);
+                recipeh5.addClass(`recipeHeader${i}`);
                 recipeh5.text(recipeTitle);
 
                 var cardSize = $("<div>");
@@ -92,10 +95,6 @@ $(document).ready(function () {
                 cardImage.addClass("responsive-img");
                 cardImage.attr("src", recipeImage);
                 cardImage.attr("alt", "Image Example");
-
-                // var cardTitle = $("<span>");
-                // cardTitle.addClass("card-title");
-                // cardTitle.text("Recipe");
 
                 var cardContent = $("<div>");
                 cardContent.addClass("card-content");
@@ -143,7 +142,7 @@ $(document).ready(function () {
 
                 var aFavorites = $("<a>");
                 aFavorites.addClass(
-                    "addFavBtn waves-effect waves-light btn-small"
+                    `addFavBtn${i} waves-effect waves-light btn-small`
                 );
                 aFavorites.text("Add");
 
@@ -203,9 +202,23 @@ $(document).ready(function () {
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
 
+                // $(document).on("click", `.addFavBtn${i}`, addFav);
+                $(document).on("click", `.addFavBtn${i}`, function addFav() {
+                    var favTarget = $(`.recipeHeader${i}`).text();
+                    if (favTarget && favStorage.indexOf(favTarget) === -1) {
+                        favStorage.push(favTarget);
+                        localStorage.setItem(
+                            "favorites",
+                            JSON.stringify(favStorage)
+                        );
+                    }
+                    setFavModal();
+                });
+
                 // calls function to get the ingredients
                 getIngredients(hit);
             });
+            i++;
         });
     }
 
@@ -304,3 +317,15 @@ $(document).ready(function () {
         });
     }
 });
+function setFavModal() {
+    FAVMODAL.empty();
+    var favList = JSON.parse(localStorage.getItem("favorites")) || [];
+    favStorage = favList;
+    favList.forEach((favorite) => {
+        var favListDisplay = generateFavList(favorite);
+        FAVMODAL.append(favListDisplay);
+    });
+}
+function generateFavList(favItem) {
+    return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
+}

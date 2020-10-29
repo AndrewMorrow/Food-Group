@@ -8,7 +8,7 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;;
+    width: 100%;
     color: teal;
     text-align: center;
 }
@@ -18,23 +18,23 @@ footer {
     justify-content: space-around;
 }
 
-.theFoodGroup{
+.theFoodGroup {
     font-size: 2rem !important;
 }
 
-.marginTop{
+.marginTop {
     margin-top: 3rem;
 }
 
 .container {
- width: auto;
- margin: 0 auto;   
+    width: auto;
+    margin: 0 auto;
 }
 
-.card-image{
-width: auto;
+.card-image {
+    width: auto;
 }
 
 .card.large {
     height: 100%;
-  }
+}
