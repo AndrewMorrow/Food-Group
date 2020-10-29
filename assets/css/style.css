@@ -54,3 +54,7 @@ width: auto;
 #groceryFix {
     margin-top: 1.5px;
 }
+
+.card-image {
+    margin-top: -9px;
+}
