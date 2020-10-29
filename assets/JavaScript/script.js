@@ -229,6 +229,7 @@ $(document).ready(function () {
             });
             i++;
         });
+        M.AutoInit();
     }
 
     // grabs ingredient info for each recipe
