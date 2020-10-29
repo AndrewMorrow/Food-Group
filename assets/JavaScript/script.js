@@ -76,13 +76,14 @@ $(document).ready(function () {
 
                 // healthInfoValues
                 let recipeFat = healthReturn[0].fat;
+
                 let recipeCarbs = healthReturn[0].carbs;
                 let recipeProtein = healthReturn[0].protein;
                 let recipeCholesterol = healthReturn[0].cholesterol;
                 // console.log(recipeFat);
 
                 var recipeh5 = $("<h5>");
-                recipeh5.addClass("light");
+                recipeh5.addClass("teal darken-2 light");
                 recipeh5.addClass(`recipeHeader${i}`);
                 recipeh5.text(recipeTitle);
 
@@ -144,16 +145,17 @@ $(document).ready(function () {
 
                 var aGrocery = $("<a>");
                 aGrocery.addClass(
-                    "groceryBtn waves-effect waves-light btn-small modal-trigger"
+                    "groceryBtn waves-effect waves-light btn-small"
                 );
-                aGrocery.attr("href", "#modal2");
-                aGrocery.text("Grocery");
+                aGrocery.attr("target", "_blank");
+                aGrocery.attr("href", recipeUrl);
+                aGrocery.text("Recipe");
 
                 var aFavorites = $("<a>");
                 aFavorites.addClass(
                     `addFavBtn${i} waves-effect waves-light btn-small`
                 );
-                aFavorites.text("Add");
+                aFavorites.text("Favorite");
 
                 var iFavorites = $("<i>");
                 iFavorites.addClass("material-icons right");
@@ -188,9 +190,8 @@ $(document).ready(function () {
                 aMobileFav.text("Add Fav");
 
                 CARDSHOW.append(recipeh5, cardSize);
-                cardSize.append(imageDiv, cardContent, navTag, sidenav);
+                cardSize.append(imageDiv, navTag, sidenav);
                 imageDiv.append(cardImage);
-                cardContent.append(cardRecipe);
                 navTag.append(divWrap);
                 divWrap.append(mobileDemo, ulTag);
                 mobileDemo.append(iTag);

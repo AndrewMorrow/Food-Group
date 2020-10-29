@@ -2,9 +2,11 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: "Noto Sans", sans-serif;
 }
 
 footer {
+    background-color: white;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -37,4 +39,22 @@ footer {
 
 .card.large {
     height: 100%;
+}
+
+.recipeHeader {
+    color: white;
+    margin-bottom: -7px;
+    border-top-left-radius: 2.5px;
+    border-top-right-radius: 2.5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#groceryFix {
+    margin-top: 1.5px;
+}
+
+.card-image {
+    margin-top: -9px;
 }
