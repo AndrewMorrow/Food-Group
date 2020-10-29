@@ -12,7 +12,6 @@ const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
 const FAVMODAL = $(".favModal");
 
-
 // Nav
 $(document).ready(function () {
     // materialize js fires
@@ -39,6 +38,7 @@ $(document).ready(function () {
             // targets each recipe received and targets elements we need
             hits.forEach((hit) => {
                 // console.log(hit);
+
                 let recipeTitle = hit.recipe.label;
                 let recipeImage = hit.recipe.image;
                 let recipeTime = hit.recipe.totalTime;
@@ -87,46 +87,40 @@ $(document).ready(function () {
 
                 // appends all the elements created for testing
 
-
-
-
                 // Need to add Recipe Time/Servings/Calories sections
-                var cardShow = $("#cardShow")
+                // var cardShow = $("#cardShow")
 
                 var recipeh5 = $("<h5>");
                 recipeh5.addClass("light");
-                recipeh5.addClass("recipeHeader" + i);
-                recipeh5.text(recipeTitle)
-            
+                recipeh5.addClass(`recipeHeader`);
+                recipeh5.text(recipeTitle);
+
                 var cardSize = $("<div>");
                 cardSize.addClass("card large");
-            
+
                 var imageDiv = $("<div>");
                 imageDiv.addClass("card-image");
-            
+
                 var cardImage = $("<img>");
                 cardImage.addClass("responsive-img");
                 cardImage.attr("src", recipeImage);
                 cardImage.attr("alt", "Image Example");
-            
+
                 // var cardTitle = $("<span>");
                 // cardTitle.addClass("card-title");
                 // cardTitle.text("Recipe");
-            
+
                 var cardContent = $("<div>");
                 cardContent.addClass("card-content");
-            
+
                 var cardRecipe = $("<p>");
                 cardRecipe.text(recipeUrl);
 
-
-
-
-
-                var navTag = $("<nav>")
+                var navTag = $("<nav>");
 
                 var divWrap = $("<div>");
-                divWrap.addClass("nav-wrapper teal");``
+                divWrap.addClass("nav-wrapper teal");
+                ``;
 
                 var mobileDemo = $("<a>");
                 mobileDemo.attr("href", "#");
@@ -147,25 +141,28 @@ $(document).ready(function () {
                 var liFavorites = $("<li>");
 
                 var aIngredients = $("<a>");
-                aIngredients.addClass("ingredientsBtn waves-effect waves-light btn-small modal-trigger");
+                aIngredients.addClass(
+                    "ingredientsBtn waves-effect waves-light btn-small modal-trigger"
+                );
                 aIngredients.attr("href", "#modal1");
                 aIngredients.text("Ingredients");
 
                 var aGrocery = $("<a>");
-                aGrocery.addClass("groceryBtn waves-effect waves-light btn-small modal-trigger");
+                aGrocery.addClass(
+                    "groceryBtn waves-effect waves-light btn-small modal-trigger"
+                );
                 aGrocery.attr("href", "#modal2");
                 aGrocery.text("Grocery");
-                
-                var aFavorites = $("<a>");
-                aFavorites.addClass("addFavBtn waves-effect waves-light btn-small");
-                aFavorites.text("Add");
 
+                var aFavorites = $("<a>");
+                aFavorites.addClass(
+                    "addFavBtn waves-effect waves-light btn-small"
+                );
+                aFavorites.text("Add");
 
                 var iFavorites = $("<i>");
                 iFavorites.addClass("material-icons right");
                 iFavorites.text("Favorite");
-
-
 
                 var sidenav = $("<ul>");
                 sidenav.addClass("sidenav");
@@ -195,9 +192,7 @@ $(document).ready(function () {
                 aMobileFav.attr("href", "#");
                 aMobileFav.text("Add Fav");
 
-            
-            
-                cardShow.append(recipeTitle, cardSize);
+                CARDSHOW.append(recipeh5, cardSize);
                 cardSize.append(imageDiv, cardContent, navTag, sidenav);
                 imageDiv.append(cardImage);
                 cardContent.append(cardRecipe);
@@ -210,19 +205,16 @@ $(document).ready(function () {
                 liFavorites.append(aFavorites);
                 aFavorites.append(iFavorites);
 
-                sidenav.append(liMobileRecipe,liMobileIngredients, liMobileGrocery, liMobileFav);
+                sidenav.append(
+                    liMobileRecipe,
+                    liMobileIngredients,
+                    liMobileGrocery,
+                    liMobileFav
+                );
                 liMobileRecipe.append(h4Recipe);
                 liMobileIngredients.append(aMobileIngredients);
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
-
-
-
-
-
-
-
-
 
                 // CARDSHOW.append(showRecipeTitle);
                 // CARDSHOW.append(showRecipeImage);
@@ -237,15 +229,10 @@ $(document).ready(function () {
 
                 // calls function to get the ingredients
                 getIngredients(hit);
+                console.log("hello");
             });
-
-           
         });
-
-
     }
-
-
 
     // grabs ingredient info for each recipe
     function getIngredients(hit) {
@@ -322,97 +309,81 @@ $(document).ready(function () {
     }
 });
 
+//     <div class="row">
+//         <div class="cardShow">
+//             <h4 class="light">What they type</h4>
+//             <div class="card large">
+//                 <div class="card-image">
+//                     <img
+//                         class="responsive-img"
+//                         src="https://via.placeholder.com/300x300"
+//                         alt="Example of a recipe picture"
+//                     />
+//                     <span class="card-title">Recipe</span>
+//                 </div>
+//                 <div class="card-content">
+//                     <p>Example Recipe</p>
+//                 </div>
 
+//                 <!-- Card nav -->
+//                 <nav>
+//                     <div class="nav-wrapper teal">
+//                         <a
+//                             href="#"
+//                             data-target="mobile-demo2"
+//                             class="sidenav-trigger"
+//                             ><i class="material-icons text-darken-5"
+//                                 >more_horiz</i
+//                             ></a
+//                         >
 
+//                         <ul class="right hide-on-med-and-down">
+//                             <li>
+//                                 <a
+//                                     class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
+//                                     href="#modal1"
+//                                     >Ingredients</a
+//                                 >
+//                             </li>
+//                             <li>
+//                                 <a
+//                                     class="groceryBtn waves-effect waves-light btn-small modal-trigger"
+//                                     href="#modal2"
+//                                     >Grocery Stores</a
+//                                 >
+//                             </li>
+//                             <li>
+//                                 <a
+//                                     class="addFavBtn waves-effect waves-light btn-small"
+//                                     ><i class="material-icons right"
+//                                         >favorite</i
+//                                     >Add</a
+//                                 >
+//                             </li>
+//                         </ul>
+//                     </div>
+//                 </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //     <div class="row">
-        //         <div class="cardShow">
-        //             <h4 class="light">What they type</h4>
-        //             <div class="card large">
-        //                 <div class="card-image">
-        //                     <img
-        //                         class="responsive-img"
-        //                         src="https://via.placeholder.com/300x300"
-        //                         alt="Example of a recipe picture"
-        //                     />
-        //                     <span class="card-title">Recipe</span>
-        //                 </div>
-        //                 <div class="card-content">
-        //                     <p>Example Recipe</p>
-        //                 </div>
-
-        //                 <!-- Card nav -->
-        //                 <nav>
-        //                     <div class="nav-wrapper teal">
-        //                         <a
-        //                             href="#"
-        //                             data-target="mobile-demo2"
-        //                             class="sidenav-trigger"
-        //                             ><i class="material-icons text-darken-5"
-        //                                 >more_horiz</i
-        //                             ></a
-        //                         >
-
-        //                         <ul class="right hide-on-med-and-down">
-        //                             <li>
-        //                                 <a
-        //                                     class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
-        //                                     href="#modal1"
-        //                                     >Ingredients</a
-        //                                 >
-        //                             </li>
-        //                             <li>
-        //                                 <a
-        //                                     class="groceryBtn waves-effect waves-light btn-small modal-trigger"
-        //                                     href="#modal2"
-        //                                     >Grocery Stores</a
-        //                                 >
-        //                             </li>
-        //                             <li>
-        //                                 <a
-        //                                     class="addFavBtn waves-effect waves-light btn-small"
-        //                                     ><i class="material-icons right"
-        //                                         >favorite</i
-        //                                     >Add</a
-        //                                 >
-        //                             </li>
-        //                         </ul>
-        //                     </div>
-        //                 </nav>
-
-        //                 <ul class="sidenav" id="mobile-demo2">
-        //                     <li>
-        //                         <h4 class="teal white-text center-align">
-        //                             The Recipe
-        //                         </h4>
-        //                     </li>
-        //                     <li>
-        //                         <a href="#modal1" class="modal-trigger"
-        //                             >Ingredients</a
-        //                         >
-        //                     </li>
-        //                     <li>
-        //                         <a href="#modal2" class="modal-trigger"
-        //                             >Grocery Stores</a
-        //                         >
-        //                     </li>
-        //                     <li><a href="#">Add Fav</a></li>
-        //                 </ul>
-        //                 <!-- Card nav End -->
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
+//                 <ul class="sidenav" id="mobile-demo2">
+//                     <li>
+//                         <h4 class="teal white-text center-align">
+//                             The Recipe
+//                         </h4>
+//                     </li>
+//                     <li>
+//                         <a href="#modal1" class="modal-trigger"
+//                             >Ingredients</a
+//                         >
+//                     </li>
+//                     <li>
+//                         <a href="#modal2" class="modal-trigger"
+//                             >Grocery Stores</a
+//                         >
+//                     </li>
+//                     <li><a href="#">Add Fav</a></li>
+//                 </ul>
+//                 <!-- Card nav End -->
+//             </div>
+//         </div>
+//     </div>
+// </div>
