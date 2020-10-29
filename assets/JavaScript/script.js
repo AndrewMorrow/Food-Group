@@ -11,6 +11,8 @@ const INGREDIENTSBTN = $(".ingredientsBtn");
 const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
 const FAVMODAL = $(".favModal");
+var favStorage = [];
+var i = 0;
 
 // Nav
 $(document).ready(function () {
@@ -18,6 +20,7 @@ $(document).ready(function () {
     $(".sidenav").sidenav();
     $(".modal").modal();
     M.updateTextFields();
+    setFavModal();
 
     SEARCHBUTTON.on("click", basicCall);
 
@@ -36,7 +39,7 @@ $(document).ready(function () {
             // console.log(response);
             let hits = response.hits;
             // targets each recipe received and targets elements we need
-            hits.forEach((hit) => {
+            hits.forEach((hit, i) => {
                 // console.log(hit);
 
                 let recipeTitle = hit.recipe.label;
@@ -92,7 +95,7 @@ $(document).ready(function () {
 
                 var recipeh5 = $("<h5>");
                 recipeh5.addClass("light");
-                recipeh5.addClass(`recipeHeader`);
+                recipeh5.addClass(`recipeHeader${i}`);
                 recipeh5.text(recipeTitle);
 
                 var cardSize = $("<div>");
@@ -156,13 +159,13 @@ $(document).ready(function () {
 
                 var aFavorites = $("<a>");
                 aFavorites.addClass(
-                    "addFavBtn waves-effect waves-light btn-small"
+                    `addFavBtn${i} waves-effect waves-light btn-small`
                 );
                 aFavorites.text("Add");
 
                 var iFavorites = $("<i>");
                 iFavorites.addClass("material-icons right");
-                iFavorites.text("Favorite");
+                iFavorites.text("favorite");
 
                 var sidenav = $("<ul>");
                 sidenav.addClass("sidenav");
@@ -216,23 +219,27 @@ $(document).ready(function () {
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
 
-                // CARDSHOW.append(showRecipeTitle);
-                // CARDSHOW.append(showRecipeImage);
-                // CARDSHOW.append(showRecipeTime);
-                // CARDSHOW.append(showRecipeCalories);
-                // CARDSHOW.append(showRecipeServings);
-                // CARDSHOW.append(showRecipeFat);
-                // CARDSHOW.append(showRecipeCarbs);
-                // CARDSHOW.append(showRecipeProtein);
-                // CARDSHOW.append(showRecipeCholesterol);
-                // CARDSHOW.append(showRecipeUrl);
+                // $(document).on("click", `.addFavBtn${i}`, addFav);
+                $(document).on("click", `.addFavBtn${i}`, function addFav() {
+                    var favTarget = $(`.recipeHeader${i}`).text();
+                    if (favTarget && favStorage.indexOf(favTarget) === -1) {
+                        favStorage.push(favTarget);
+                        localStorage.setItem(
+                            "favorites",
+                            JSON.stringify(favStorage)
+                        );
+                    }
+                    setFavModal();
+                });
 
                 // calls function to get the ingredients
                 getIngredients(hit);
-                console.log("hello");
             });
+            i++;
         });
     }
+
+    // $(document).on("click", ".addFavBtn", addFav);
 
     // grabs ingredient info for each recipe
     function getIngredients(hit) {
@@ -308,6 +315,25 @@ $(document).ready(function () {
         return healthFacts;
     }
 });
+
+function setFavModal() {
+    FAVMODAL.empty();
+    console.log("Im pulling storage");
+    var favList = JSON.parse(localStorage.getItem("favorites")) || [];
+    favStorage = favList;
+    favList.forEach((favorite) => {
+        var favListDisplay = generateFavList(favorite);
+        FAVMODAL.append(favListDisplay);
+    });
+}
+function generateFavList(favItem) {
+    return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
+}
+
+// function addFav(e) {
+//     console.log(e);
+//     console.log("click Fav");
+// }
 
 //     <div class="row">
 //         <div class="cardShow">
