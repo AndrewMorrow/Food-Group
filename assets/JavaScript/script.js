@@ -12,7 +12,6 @@ const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
 const FAVMODAL = $(".favModal");
 var favStorage = [];
-var i = 0;
 
 // Nav
 $(document).ready(function () {
@@ -39,6 +38,7 @@ $(document).ready(function () {
             // console.log(response);
             let hits = response.hits;
             // targets each recipe received and targets elements we need
+            var i = 0;
             hits.forEach((hit, i) => {
                 // console.log(hit);
 
@@ -65,33 +65,6 @@ $(document).ready(function () {
                 let recipeCarbs = healthReturn[0].carbs;
                 let recipeProtein = healthReturn[0].protein;
                 let recipeCholesterol = healthReturn[0].cholesterol;
-                // console.log(recipeFat);
-
-                // creates elements to append for testing
-                let showRecipeTitle = $(`<h2> ${recipeTitle} </h2>`);
-                let showRecipeImage = $(`<img src="${recipeImage}"</img>`);
-                let showRecipeUrl = $(
-                    `<a href="${recipeUrl}"> Original Recipe </a>`
-                );
-                let showRecipeServings = $(
-                    `<p> Servings: ${recipeServings}</p>`
-                );
-                let showRecipeCalories = $(
-                    `<p> Total Calories: ${recipeCalories}</p>`
-                );
-                let showRecipeFat = $(`<p> Total Fat: ${recipeFat}</p>`);
-                let showRecipeCarbs = $(`<p> Total Carbs: ${recipeCarbs}</p>`);
-                let showRecipeProtein = $(
-                    `<p> Total Protein: ${recipeProtein}</p>`
-                );
-                let showRecipeCholesterol = $(
-                    `<p> Total Cholesterol: ${recipeCholesterol}</p>`
-                );
-
-                // appends all the elements created for testing
-
-                // Need to add Recipe Time/Servings/Calories sections
-                // var cardShow = $("#cardShow")
 
                 var recipeh5 = $("<h5>");
                 recipeh5.addClass("light");
@@ -108,10 +81,6 @@ $(document).ready(function () {
                 cardImage.addClass("responsive-img");
                 cardImage.attr("src", recipeImage);
                 cardImage.attr("alt", "Image Example");
-
-                // var cardTitle = $("<span>");
-                // cardTitle.addClass("card-title");
-                // cardTitle.text("Recipe");
 
                 var cardContent = $("<div>");
                 cardContent.addClass("card-content");
@@ -239,8 +208,6 @@ $(document).ready(function () {
         });
     }
 
-    // $(document).on("click", ".addFavBtn", addFav);
-
     // grabs ingredient info for each recipe
     function getIngredients(hit) {
         // console.log(hit);
@@ -262,10 +229,6 @@ $(document).ready(function () {
             // creats elements for ingredients
             let showIngredientImage = `<img src="${ingredientImage}"</img>`;
             let showIngredientText = `<p>${ingredientText}</p>`;
-
-            // appends ingredients for testing
-            // CARDSHOW.append(showIngredientImage);
-            // CARDSHOW.append(showIngredientText);
         });
     }
 
@@ -318,7 +281,6 @@ $(document).ready(function () {
 
 function setFavModal() {
     FAVMODAL.empty();
-    console.log("Im pulling storage");
     var favList = JSON.parse(localStorage.getItem("favorites")) || [];
     favStorage = favList;
     favList.forEach((favorite) => {
@@ -329,87 +291,3 @@ function setFavModal() {
 function generateFavList(favItem) {
     return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
 }
-
-// function addFav(e) {
-//     console.log(e);
-//     console.log("click Fav");
-// }
-
-//     <div class="row">
-//         <div class="cardShow">
-//             <h4 class="light">What they type</h4>
-//             <div class="card large">
-//                 <div class="card-image">
-//                     <img
-//                         class="responsive-img"
-//                         src="https://via.placeholder.com/300x300"
-//                         alt="Example of a recipe picture"
-//                     />
-//                     <span class="card-title">Recipe</span>
-//                 </div>
-//                 <div class="card-content">
-//                     <p>Example Recipe</p>
-//                 </div>
-
-//                 <!-- Card nav -->
-//                 <nav>
-//                     <div class="nav-wrapper teal">
-//                         <a
-//                             href="#"
-//                             data-target="mobile-demo2"
-//                             class="sidenav-trigger"
-//                             ><i class="material-icons text-darken-5"
-//                                 >more_horiz</i
-//                             ></a
-//                         >
-
-//                         <ul class="right hide-on-med-and-down">
-//                             <li>
-//                                 <a
-//                                     class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
-//                                     href="#modal1"
-//                                     >Ingredients</a
-//                                 >
-//                             </li>
-//                             <li>
-//                                 <a
-//                                     class="groceryBtn waves-effect waves-light btn-small modal-trigger"
-//                                     href="#modal2"
-//                                     >Grocery Stores</a
-//                                 >
-//                             </li>
-//                             <li>
-//                                 <a
-//                                     class="addFavBtn waves-effect waves-light btn-small"
-//                                     ><i class="material-icons right"
-//                                         >favorite</i
-//                                     >Add</a
-//                                 >
-//                             </li>
-//                         </ul>
-//                     </div>
-//                 </nav>
-
-//                 <ul class="sidenav" id="mobile-demo2">
-//                     <li>
-//                         <h4 class="teal white-text center-align">
-//                             The Recipe
-//                         </h4>
-//                     </li>
-//                     <li>
-//                         <a href="#modal1" class="modal-trigger"
-//                             >Ingredients</a
-//                         >
-//                     </li>
-//                     <li>
-//                         <a href="#modal2" class="modal-trigger"
-//                             >Grocery Stores</a
-//                         >
-//                     </li>
-//                     <li><a href="#">Add Fav</a></li>
-//                 </ul>
-//                 <!-- Card nav End -->
-//             </div>
-//         </div>
-//     </div>
-// </div>
