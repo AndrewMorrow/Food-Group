@@ -89,9 +89,10 @@ $(document).ready(function () {
 
                 // Need to add Recipe Time/Servings/Calories sections
                 // var cardShow = $("#cardShow")
+                
 
                 var recipeh5 = $("<h5>");
-                recipeh5.addClass("light");
+                recipeh5.addClass("teal darken-2 light ");
                 recipeh5.addClass(`recipeHeader`);
                 recipeh5.text(recipeTitle);
 
@@ -109,13 +110,6 @@ $(document).ready(function () {
                 // var cardTitle = $("<span>");
                 // cardTitle.addClass("card-title");
                 // cardTitle.text("Recipe");
-
-                var cardContent = $("<div>");
-                cardContent.addClass("card-content");
-
-                var cardRecipe = $("<p>");
-                cardRecipe.text(recipeUrl);
-
                 var navTag = $("<nav>");
 
                 var divWrap = $("<div>");
@@ -149,20 +143,22 @@ $(document).ready(function () {
 
                 var aGrocery = $("<a>");
                 aGrocery.addClass(
-                    "groceryBtn waves-effect waves-light btn-small modal-trigger"
+                    "groceryBtn waves-effect waves-light btn-small"
                 );
-                aGrocery.attr("href", "#modal2");
+                aGrocery.attr("target", "_blank");
+                aGrocery.attr("href", recipeUrl);
                 aGrocery.text("Grocery");
+
 
                 var aFavorites = $("<a>");
                 aFavorites.addClass(
                     "addFavBtn waves-effect waves-light btn-small"
                 );
-                aFavorites.text("Add");
+                aFavorites.text("Favorite");
 
                 var iFavorites = $("<i>");
                 iFavorites.addClass("material-icons right");
-                iFavorites.text("Favorite");
+                iFavorites.text("favorite");
 
                 var sidenav = $("<ul>");
                 sidenav.addClass("sidenav");
@@ -193,9 +189,8 @@ $(document).ready(function () {
                 aMobileFav.text("Add Fav");
 
                 CARDSHOW.append(recipeh5, cardSize);
-                cardSize.append(imageDiv, cardContent, navTag, sidenav);
+                cardSize.append(imageDiv, navTag, sidenav);
                 imageDiv.append(cardImage);
-                cardContent.append(cardRecipe);
                 navTag.append(divWrap);
                 divWrap.append(mobileDemo, ulTag);
                 mobileDemo.append(iTag);
@@ -216,20 +211,10 @@ $(document).ready(function () {
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
 
-                // CARDSHOW.append(showRecipeTitle);
-                // CARDSHOW.append(showRecipeImage);
-                // CARDSHOW.append(showRecipeTime);
-                // CARDSHOW.append(showRecipeCalories);
-                // CARDSHOW.append(showRecipeServings);
-                // CARDSHOW.append(showRecipeFat);
-                // CARDSHOW.append(showRecipeCarbs);
-                // CARDSHOW.append(showRecipeProtein);
-                // CARDSHOW.append(showRecipeCholesterol);
-                // CARDSHOW.append(showRecipeUrl);
-
                 // calls function to get the ingredients
                 getIngredients(hit);
                 console.log("hello");
+
             });
         });
     }

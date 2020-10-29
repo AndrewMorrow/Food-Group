@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <!-- Materialize CDN -->
     <link
       rel="stylesheet"
@@ -30,7 +32,7 @@
             ><i class="material-icons">menu</i></a
           >
           <ul class="right hide-on-med-and-down">
-            <li><a href="#modalMap" class="modal-trigger">Grocery Stores</a></li>
+            <li><a href="#modalMap" id="groceryFix" class="modal-trigger">Grocery Stores</a></li>
             <li>
               <a
                 class="favorites waves-effect waves-light modal-trigger"
@@ -76,63 +78,8 @@
       </div>
       <div class="row">
         <div class="cardShow">
-          <h4 class="light">What they type</h4>
-          <div class="card large">
-            <div class="card-image">
-              <img
-                class="responsive-img"
-                src="https://via.placeholder.com/300x300"
-                alt="Example of a recipe picture"
-              />
-              <span class="card-title">Recipe</span>
-            </div>
-            <div class="card-content">
-              <p>Example Recipe</p>
-            </div>
-
-            <!-- Card nav -->
-            <nav>
-              <div class="nav-wrapper teal">
-                <a href="#" data-target="mobile-demo2" class="sidenav-trigger"
-                  ><i class="material-icons text-darken-5">more_horiz</i></a
-                >
-
-
-                <ul class="right hide-on-med-and-down">
-                  <li>
-                    <a
-                      class="ingredientsBtn waves-effect waves-light btn-small modal-trigger"
-                      href="#modal1"
-                      >Ingredients</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="btn waves-effect waves-light">Link to Recipe</a>
-                  </li>
-                  <li>
-                    <a class="addFavBtn waves-effect waves-light btn-small"
-                      ><i class="material-icons right">favorite</i>Add</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </nav>
-
-
-            <ul class="sidenav" id="mobile-demo2">
-              <li>
-                <h4 class="teal white-text center-align">The Recipe</h4>
-              </li>
-              <li>
-                <a href="#modal1" class="modal-trigger">Ingredients</a>
-              </li>
-              <li>
-                <a href="#" class="btn">Link to Recipe</a>
-              </li>
-              <li><a href="#">Add Fav</a></li>
-            </ul>
-            <!-- Card nav End -->
-          </div>
+          
+            
         </div>
       </div>
     </div>
@@ -188,7 +135,7 @@
       </div>
     </div>
 
-    <footer class="teal z-depth-5">
+    <footer class="z-depth-5">
       <b>© The Food Group</b>
       API's by Edamam and Google Maps
     </footer>
