@@ -223,7 +223,6 @@ $(document).ready(function () {
                     }
                     setFavModal();
                 });
-
                 // calls function to get the ingredients
                 getIngredients(hit);
             });
@@ -231,7 +230,7 @@ $(document).ready(function () {
         });
         M.AutoInit();
     }
-
+    // $(document).on("click", `.collection-item`, recallApi);
     // grabs ingredient info for each recipe
     function getIngredients(hit) {
         // console.log(hit);
@@ -339,3 +338,10 @@ function setFavModal() {
 function generateFavList(favItem) {
     return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
 }
+
+// function recallApi(e) {
+//     console.log("here");
+//     var recallItem = $(this).text();
+//     apiRecipeCall = `https://api.edamam.com/search?q=${recallItem}&app_id=${RECIPEAPIID}&app_key=${RECIPEAPIKEY}`;
+//     basicCall();
+// }
