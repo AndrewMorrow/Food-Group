@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family:'Noto Sans', sans-serif;;
+    font-family: "Noto Sans", sans-serif;
 }
 
 footer {
@@ -10,7 +10,7 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;;
+    width: 100%;
     color: teal;
     text-align: center;
 }
@@ -20,26 +20,26 @@ footer {
     justify-content: space-around;
 }
 
-.theFoodGroup{
+.theFoodGroup {
     font-size: 2rem !important;
 }
 
-.marginTop{
+.marginTop {
     margin-top: 3rem;
 }
 
 .container {
- width: auto;
- margin: 0 auto;   
+    width: auto;
+    margin: 0 auto;
 }
 
-.card-image{
-width: auto;
+.card-image {
+    width: auto;
 }
 
 .card.large {
     height: 100%;
-  }
+}
 
 .recipeHeader {
     color: white;
@@ -53,4 +53,8 @@ width: auto;
 
 #groceryFix {
     margin-top: 1.5px;
+}
+
+.card-image {
+    margin-top: -9px;
 }
