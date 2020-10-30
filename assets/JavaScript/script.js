@@ -47,6 +47,7 @@ $(document).ready(function () {
         var userSearch = $(this).text();
 
         basicCall(userSearch);
+        
     });
 
     // runs on search click
@@ -257,6 +258,7 @@ $(document).ready(function () {
     function getIngredients(hit) {
         // console.log(hit);
         let ingredients = hit.recipe.ingredients;
+        $(".appendIng").empty();
 
         ingredients.forEach((ingredient) => {
             // console.log(ingredient);
@@ -272,8 +274,17 @@ $(document).ready(function () {
             }
 
             // creats elements for ingredients
+
+
+            let newCard = $("<div>")
+            newCard.addClass("card small")
+            let newCardImage = $("<div>")
+            newCard.addClass("card-image")
             let showIngredientImage = `<img src="${ingredientImage}"</img>`;
-            let showIngredientText = `<p>${ingredientText}</p>`;
+            let newCardContent = $(`<div class="card-content"></div>`)
+            let showIngredientText = `<span class="card-title">${ingredientText}</span>`;
+            
+            $(".appendIng").append(newCard, newCardImage, showIngredientImage, newCardContent, showIngredientText);
         });
     }
 
