@@ -15,6 +15,7 @@ var favStorage = [];
 
 // Nav
 $(document).ready(function () {
+    M.AutoInit();
     var searchHistoryArray = [];
     var storeSearch = localStorage.getItem("userSearch");
 
@@ -30,7 +31,7 @@ $(document).ready(function () {
     // $(".sidenav").sidenav();
     // $(".modal").modal();
     // M.updateTextFields();
-    M.AutoInit();
+
     setFavModal();
 
     SEARCHBUTTON.on("click", basicCall);
@@ -212,7 +213,6 @@ $(document).ready(function () {
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
 
-                // $(document).on("click", `.addFavBtn${i}`, addFav);
                 $(document).on("click", `.addFavBtn${i}`, function addFav() {
                     var favTarget = $(`.recipeHeader${i}`).text();
                     if (favTarget && favStorage.indexOf(favTarget) === -1) {
@@ -326,23 +326,17 @@ $(document).ready(function () {
             $(".addHistory").append(newA);
         });
     }
-});
-function setFavModal() {
-    FAVMODAL.empty();
-    var favList = JSON.parse(localStorage.getItem("favorites")) || [];
-    favStorage = favList;
-    favList.forEach((favorite) => {
-        var favListDisplay = generateFavList(favorite);
-        FAVMODAL.append(favListDisplay);
-    });
-}
-function generateFavList(favItem) {
-    return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
-}
 
-// function recallApi(e) {
-//     console.log("here");
-//     var recallItem = $(this).text();
-//     apiRecipeCall = `https://api.edamam.com/search?q=${recallItem}&app_id=${RECIPEAPIID}&app_key=${RECIPEAPIKEY}`;
-//     basicCall();
-// }
+    function setFavModal() {
+        FAVMODAL.empty();
+        var favList = JSON.parse(localStorage.getItem("favorites")) || [];
+        favStorage = favList;
+        favList.forEach((favorite) => {
+            var favListDisplay = generateFavList(favorite);
+            FAVMODAL.append(favListDisplay);
+        });
+    }
+    function generateFavList(favItem) {
+        return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
+    }
+});
