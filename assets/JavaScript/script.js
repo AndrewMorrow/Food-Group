@@ -95,7 +95,9 @@ $(document).ready(function () {
                 // console.log(recipeFat);
 
                 var recipeh5 = $("<h5>");
-                recipeh5.addClass("teal darken-2 light");
+                recipeh5.addClass(
+                    "teal light white-text center-align paddingAdd"
+                );
                 recipeh5.addClass(`recipeHeader${i}`);
                 recipeh5.text(recipeTitle);
 
@@ -185,22 +187,28 @@ $(document).ready(function () {
                 var liMobileFav = $("<li>");
 
                 var h4Recipe = $("<h4>");
-                h4Recipe.addClass("teal white-text center-align");
+                h4Recipe.addClass("teal white-text center-align paddingAdd");
                 h4Recipe.text("The Recipe");
 
                 var aMobileIngredients = $("<a>");
-                aMobileIngredients.addClass("modal-trigger");
+                aMobileIngredients.addClass(
+                    "modal-trigger waves-effect waves-light btn-small"
+                );
                 aMobileIngredients.attr("href", "#modal1");
                 aMobileIngredients.text("Ingredients");
 
                 var aMobileLink = $("<a>");
                 aMobileLink.addClass("waves-effect waves-light btn-small");
+                aMobileLink.attr("target", `_blank`);
                 aMobileLink.attr("href", `${recipeUrl}`);
                 aMobileLink.text("Recipe");
 
                 var aMobileFav = $("<a>");
                 aMobileFav.attr("href", "#");
-                aMobileFav.attr("class", `addFavBtn${i}`);
+                aMobileFav.attr(
+                    "class",
+                    `addFavBtn${i} waves-effect waves-light btn-small`
+                );
                 aMobileFav.text("Add Fav");
 
                 CARDSHOW.append(recipeh5, cardSize);
