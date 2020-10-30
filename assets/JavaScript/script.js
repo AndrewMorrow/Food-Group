@@ -127,7 +127,6 @@ $(document).ready(function () {
 
                 var divWrap = $("<div>");
                 divWrap.addClass("nav-wrapper teal");
-                ``;
 
                 var mobileDemo = $("<a>");
                 mobileDemo.attr("href", "#");
@@ -174,13 +173,13 @@ $(document).ready(function () {
 
                 var sidenav = $("<ul>");
                 sidenav.addClass("sidenav");
-                sidenav.attr(`id", "mobile-demo${i}`);
+                sidenav.attr("id", `mobile-demo${i}`);
 
                 var liMobileRecipe = $("<li>");
 
                 var liMobileIngredients = $("<li>");
 
-                var liMobileGrocery = $("<li>");
+                var liMobileLink = $("<li>");
 
                 var liMobileFav = $("<li>");
 
@@ -191,10 +190,12 @@ $(document).ready(function () {
                 var aMobileIngredients = $("<a>");
                 aMobileIngredients.addClass("modal-trigger");
                 aMobileIngredients.attr("href", "#modal1");
+                aMobileIngredients.text("Ingredients");
 
-                var aMobileGrocery = $("<a>");
-                aMobileGrocery.addClass("modal-trigger");
-                aMobileGrocery.attr("href", "#modal2");
+                var aMobileLink = $("<a>");
+                aMobileLink.addClass("waves-effect waves-light btn-small");
+                aMobileLink.attr("href", `${recipeUrl}`);
+                aMobileLink.text("Recipe");
 
                 var aMobileFav = $("<a>");
                 aMobileFav.attr("href", "#");
@@ -216,12 +217,12 @@ $(document).ready(function () {
                 sidenav.append(
                     liMobileRecipe,
                     liMobileIngredients,
-                    liMobileGrocery,
+                    liMobileLink,
                     liMobileFav
                 );
                 liMobileRecipe.append(h4Recipe);
                 liMobileIngredients.append(aMobileIngredients);
-                liMobileGrocery.append(aMobileGrocery);
+                liMobileLink.append(aMobileLink);
                 liMobileFav.append(aMobileFav);
 
                 $(document).on("click", `.addFavBtn${i}`, () => {
@@ -238,8 +239,8 @@ $(document).ready(function () {
                 // calls function to get the ingredients
                 getIngredients(hit);
             });
+            M.AutoInit();
         });
-        M.AutoInit();
     }
     // $(document).on("click", `.collection-item`, recallApi);
     // grabs ingredient info for each recipe
