@@ -120,7 +120,7 @@ $(document).ready(function () {
 
                 var mobileDemo = $("<a>");
                 mobileDemo.attr("href", "#");
-                mobileDemo.attr("data-target", "mobile-demo2");
+                mobileDemo.attr("data-target", `mobile-demo${i}`);
                 mobileDemo.attr("class", "sidenav-trigger");
 
                 var iTag = $("<i>");
@@ -163,7 +163,7 @@ $(document).ready(function () {
 
                 var sidenav = $("<ul>");
                 sidenav.addClass("sidenav");
-                sidenav.attr("id", "mobile-demo2");
+                sidenav.attr(`id", "mobile-demo${i}`);
 
                 var liMobileRecipe = $("<li>");
 
@@ -213,7 +213,7 @@ $(document).ready(function () {
                 liMobileGrocery.append(aMobileGrocery);
                 liMobileFav.append(aMobileFav);
 
-                $(document).on("click", `.addFavBtn${i}`, function addFav() {
+                $(document).on("click", `.addFavBtn${i}`, () => {
                     var favTarget = $(`.recipeHeader${i}`).text();
                     if (favTarget && favStorage.indexOf(favTarget) === -1) {
                         favStorage.push(favTarget);
@@ -227,7 +227,6 @@ $(document).ready(function () {
                 // calls function to get the ingredients
                 getIngredients(hit);
             });
-            i++;
         });
         M.AutoInit();
     }
