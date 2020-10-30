@@ -47,7 +47,6 @@ $(document).ready(function () {
         var userSearch = $(this).text();
 
         basicCall(userSearch);
-        
     });
 
     // runs on search click
@@ -275,16 +274,20 @@ $(document).ready(function () {
 
             // creats elements for ingredients
 
-
-            let newCard = $("<div>")
-            newCard.addClass("card center-align")
-            let newCardImage = $("<div>")
-            newCardImage.addClass("card-image center-align")
+            let newCard = $("<div>");
+            newCard.addClass("card center-align");
+            let newCardImage = $("<div>");
+            newCardImage.addClass("card-image center-align");
             let showIngredientImage = `<img class="responsive-img" src="${ingredientImage}"</img>`;
-            let newCardContent = $(`<div class="card-content"></div>`)
+            let newCardContent = $(`<div class="card-content"></div>`);
             let showIngredientText = `<h6 class="marginB card-title teal white-text center-align paddingAdd">${ingredientText}</h6>`;
-            
-            $(".appendIng").append(newCard).append(newCardImage.append(showIngredientImage), newCardContent.append(showIngredientText));
+
+            $(".appendIng")
+                .append(newCard)
+                .append(
+                    newCardImage.append(showIngredientImage),
+                    newCardContent.append(showIngredientText)
+                );
         });
     }
 
