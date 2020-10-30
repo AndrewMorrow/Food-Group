@@ -191,8 +191,9 @@ $(document).ready(function () {
                 aMobileFav.text("Add Fav");
 
                 CARDSHOW.append(recipeh5, cardSize);
-                cardSize.append(imageDiv, navTag, sidenav);
+                cardSize.append(imageDiv, cardContent, navTag, sidenav);
                 imageDiv.append(cardImage);
+                cardContent.append(cardRecipe);
                 navTag.append(divWrap);
                 divWrap.append(mobileDemo, ulTag);
                 mobileDemo.append(iTag);
