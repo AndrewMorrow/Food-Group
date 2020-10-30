@@ -11,6 +11,7 @@ const INGREDIENTSBTN = $(".ingredientsBtn");
 const GROCERYBTN = $(".groceryBtn");
 const ADDFAVBTN = $(".addFavBtn");
 const FAVMODAL = $(".favModal");
+const MAPSAPIKEY = `AIzaSyBIOXsgugzgVJmIwDWCsZSM6aA8S9iJ5ik`;
 var favStorage = [];
 
 // Nav
@@ -349,5 +350,41 @@ $(document).ready(function () {
     }
     function generateFavList(favItem) {
         return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
+    }
+
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            function (response) {
+                console.log(response);
+                showUserDetails(
+                    response.coords.latitude,
+                    response.coords.longitude
+                );
+            },
+            function (e) {}
+        );
+    }
+    function showUserDetails(latitude, longitude) {
+        let position = latitude + "," + longitude;
+        let queryURL =
+            "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+            position +
+            "&radius=10000&type=supermarket&type=bakery&key=" +
+            MAPSAPIKEY;
+        // console.log(queryURL);
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            // console.log(response);
+        });
+        let url =
+            "https://www.google.com/maps/embed/v1/search?center=" +
+            position +
+            "&zoom=12&key=" +
+            MAPSAPIKEY +
+            "&q=grocery+stores";
+        // console.log(url);
+        $("iframe").attr("src", url);
     }
 });
