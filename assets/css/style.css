@@ -28,7 +28,7 @@ footer {
     margin-top: 3rem;
 }
 
-.marginB{
+.marginB {
     margin-bottom: 3rem;
 }
 
@@ -45,14 +45,13 @@ footer {
     height: 100%;
 }
 
-.recipeHeader {
-    color: white;
+.recipeHeaderStyle {
     margin-bottom: -7px;
     border-top-left-radius: 2.5px;
     border-top-right-radius: 2.5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: center;
+    text-shadow: 1.2px 1.2px 2px black;
 }
 
 #groceryFix {

@@ -98,7 +98,7 @@ $(document).ready(function () {
                 recipeh5.addClass(
                     "teal light white-text center-align paddingAdd"
                 );
-                recipeh5.addClass(`recipeHeader${i}`);
+                recipeh5.addClass(`recipeHeader${i} recipeHeaderStyle`);
                 recipeh5.text(recipeTitle);
 
                 var cardSize = $("<div>");
