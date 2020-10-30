@@ -28,6 +28,10 @@ footer {
     margin-top: 3rem;
 }
 
+.marginB{
+    margin-bottom: 3rem;
+}
+
 .container {
     width: auto;
     margin: 0 auto;
