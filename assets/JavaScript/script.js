@@ -31,7 +31,6 @@ $(document).ready(function () {
     // $(".sidenav").sidenav();
     // $(".modal").modal();
     // M.updateTextFields();
-
     setFavModal();
 
     SEARCHBUTTON.on("click", basicCall);
