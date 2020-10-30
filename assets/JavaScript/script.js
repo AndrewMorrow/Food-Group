@@ -277,14 +277,14 @@ $(document).ready(function () {
 
 
             let newCard = $("<div>")
-            newCard.addClass("card small")
+            newCard.addClass("card center-align")
             let newCardImage = $("<div>")
-            newCard.addClass("card-image")
-            let showIngredientImage = `<img src="${ingredientImage}"</img>`;
+            newCardImage.addClass("card-image center-align")
+            let showIngredientImage = `<img class="responsive-img" src="${ingredientImage}"</img>`;
             let newCardContent = $(`<div class="card-content"></div>`)
-            let showIngredientText = `<span class="card-title">${ingredientText}</span>`;
+            let showIngredientText = `<h6 class="marginB card-title teal white-text center-align paddingAdd">${ingredientText}</h6>`;
             
-            $(".appendIng").append(newCard, newCardImage, showIngredientImage, newCardContent, showIngredientText);
+            $(".appendIng").append(newCard).append(newCardImage.append(showIngredientImage), newCardContent.append(showIngredientText));
         });
     }
 
