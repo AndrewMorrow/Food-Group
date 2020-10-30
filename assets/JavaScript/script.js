@@ -42,7 +42,7 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", ".collection-item", function (event) {
+    $(document).on("click", ".addToList", function (event) {
         event.preventDefault();
         var userSearch = $(this).text();
 
@@ -341,7 +341,7 @@ $(document).ready(function () {
         // create items in History modal
         searchHistoryArray.forEach(function (search) {
             let newA = $("<a>")
-                .addClass("collection-item")
+                .addClass("collection-item addToList")
                 .attr("href", "#!")
                 .text(search);
             $(".addHistory").append(newA);
@@ -358,7 +358,9 @@ $(document).ready(function () {
         });
     }
     function generateFavList(favItem) {
-        return $(`<a class= "collection-item" href = "#!"> ${favItem}</a>`);
+        return $(
+            `<a class= "collection-item addToList" href = "#!"> ${favItem}</a>`
+        );
     }
 
     if ("geolocation" in navigator) {
