@@ -18,6 +18,7 @@ $(document).ready(function () {
     M.AutoInit();
     var searchHistoryArray = [];
     var storeSearch = localStorage.getItem("userSearch");
+    
 
     if (storeSearch) {
         searchHistoryArray = JSON.parse(storeSearch);
@@ -33,12 +34,27 @@ $(document).ready(function () {
     // M.updateTextFields();
     setFavModal();
 
-    SEARCHBUTTON.on("click", basicCall);
+    SEARCHBUTTON.on("click", function(e){
+        e.preventDefault();
+        var userSearch = SEARCHBAR.val().trim();
+        if(userSearch){
+
+            basicCall(userSearch);
+        }
+    });
+
+    $(document).on("click", ".collection-item", function (event) {
+        event.preventDefault();
+        var userSearch = $(this).text();
+    
+        basicCall(userSearch);
+      });
+
 
     // runs on search click
-    function basicCall(e) {
-        e.preventDefault();
-        let userSearch = SEARCHBAR.val().trim();
+    function basicCall(userSearch) {
+       
+        
         SEARCHBAR.empty();
         CARDSHOW.empty();
         // basic query search
