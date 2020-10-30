@@ -200,6 +200,7 @@ $(document).ready(function () {
 
                 var aMobileFav = $("<a>");
                 aMobileFav.attr("href", "#");
+                aMobileFav.attr("class", `addFavBtn${i}`);
                 aMobileFav.text("Add Fav");
 
                 CARDSHOW.append(recipeh5, cardSize);
