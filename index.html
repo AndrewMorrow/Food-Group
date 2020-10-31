@@ -6,6 +6,16 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <!-- google fonts -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+            rel="stylesheet"
+        />
         <!-- Materialize CDN -->
         <link
             rel="stylesheet"
@@ -17,6 +27,172 @@
     </head>
 
     <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper teal z-depth-5">
+                    <a href="#!" class="theFoodGroup"> The Food Group</a>
+                    <a
+                        href="#"
+                        data-target="mobile-demo"
+                        class="sidenav-trigger"
+                        ><i class="material-icons">menu</i></a
+                    >
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a
+                                href="#modalMap"
+                                id="groceryFix"
+                                class="modal-trigger"
+                                >Grocery Stores</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="favorites waves-effect waves-light modal-trigger"
+                                href="#modalFav"
+                                >Favorites</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="history waves-effect waves-light modal-trigger"
+                                href="#modalHistory"
+                                >History</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="teal white-text center-align paddingAdd">
+                    The Food Group
+                </h4>
+            </li>
+            <li>
+                <a
+                    href="#modalMap"
+                    class="modal-trigger waves-effect waves-light btn-small"
+                    >Grocery Stores</a
+                >
+            </li>
+            <li>
+                <a
+                    href="#modalFav"
+                    class="favorites modal-trigger waves-effect waves-light btn-small"
+                    >Favorites</a
+                >
+            </li>
+            <li>
+                <a
+                    href="#modalHistory"
+                    class="history modal-trigger waves-effect waves-light btn-small"
+                    >History</a
+                >
+            </li>
+        </ul>
+
+        <!-- End of nav -->
+
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s9 offset-2 m7 marginTop offset-3">
+                    <input id="userRecipeSearch" type="text" class="validate" />
+                    <label class="active" for="userRecipeSearch"
+                        >Search Recipe</label
+                    >
+                    <span>
+                        <a class="searchBtn waves-effect waves-light btn"
+                            >Search</a
+                        >
+                        <a
+                            href="#modalHistory"
+                            class="modal-trigger btn waves-light waves-effect"
+                            >History</a
+                        >
+                    </span>
+                </div>
+            </div>
+            <!-- Card Nav -->
+            <div class="row">
+                <div class="cardShow"></div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+
+        <!-- Ingredients -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 class="teal white-text center-align paddingAdd">
+                    Ingredients
+                </h4>
+                <div class="row">
+                    <div class="col s12 m 6 appendIng"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Done</a
+                >
+            </div>
+        </div>
+        <!-- Maps -->
+        <div id="modalMap" class="modal">
+            <div class="modal-content">
+                <h4 class="teal white-text center-align paddingAdd">
+                    Grocery Stores
+                </h4>
+                <div id="map">
+                    <iframe frameborder="0" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Done</a
+                >
+            </div>
+        </div>
+        <!-- Fav -->
+        <div id="modalFav" class="modal">
+            <div class="modal-content">
+                <h4 class="teal white-text center-align paddingAdd">
+                    Favorites
+                </h4>
+                <div class="favModal collection hisFav"></div>
+            </div>
+            <div class="modal-footer">
+                <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Done</a
+                >
+            </div>
+        </div>
+        <!-- History -->
+        <div id="modalHistory" class="modal">
+            <div class="modal-content">
+                <h4 class="teal white-text center-align paddingAdd">History</h4>
+                <div class="collection addHistory hisFav"></div>
+            </div>
+            <div class="modal-footer">
+                <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Done</a
+                >
+            </div>
+        </div>
+
+        <footer class="z-depth-5">
+            <b>© The Food Group</b>
+            API's by Edamam and Google Maps
+        </footer>
         <!-- jQuery CDN -->
         <script
             src="https://code.jquery.com/jquery-3.5.1.min.js"
