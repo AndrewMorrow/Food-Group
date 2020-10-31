@@ -26,10 +26,10 @@ This repository ("`Food-Group`") is where our Food Ingredients App resides [Food
 
 # Food App Desktop View:
 <p align="center">
-  <img alt="Food App Desktop Demo" src="assets/images/">
+  <img alt="Food App Desktop Demo" src="assets/images/desktop-food-demo.gif">
 </p>
 
 # Food App Mobile View:
 <p align="center">
-  <img alt="Food App Mobile Demo" src="assets/images/">
+  <img alt="Food App Mobile Demo" src="assets/images/mobile-food-demo.gif">
 </p>
